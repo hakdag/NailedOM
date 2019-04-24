@@ -1,0 +1,116 @@
+@startuml Models
+abstract class BaseModel {
+  +Id : Integer
+  +IsDeleted : Boolean
+  +CreatedDate : Date
+}
+
+package "User Management" <<Frame>> {
+  enum UserStatus {
+    +Online : 1
+    +Offline : 2
+  }
+
+  class User {
+    .. UserName Rules ..
+    Required
+    Minimum 5 characters
+    Maximum 20 characters
+    Cant have space and special characters
+    User name must be unique
+    +UserName : String
+    ..
+
+    .. Email Rules ..
+    Required
+    Must be a valid email
+    Email must be unique
+    Different users cant have a common email address
+    +Email : String
+    ..
+
+    .. Status Rules ..
+    Required
+    +Status : UserStatus
+    ..
+
+    .. Password Rules ..
+    Encrypted
+    Required
+    ReadOnly
+    Minimum 8 characters
+    Cant have space
+    -Password : String
+    ..
+
+    .. Confirm Password Rules ..
+    Required
+    Must be same with the Password field
+    Data Transfer only field
+    -ConfirmPassword : String
+    ..
+  }
+
+  BaseModel <|-- User
+
+  User .. UserStatus
+}
+
+package "Product Management" <<Frame>> {
+  class Product {
+    .. ProductName Rules ..
+    Required
+    Minimum 3 characters
+    Maximum 100 characters
+    +ProductName : String
+    ..
+
+    .. Description Rules ..
+    Required
+    Maximum 2000 characters
+    Rich text editor
+    Possible to enter HTML content with picture
+    +ProductName : String
+    ..
+
+    .. Current Rating Rules ..
+    ReadOnly
+    +CurrentRating : Float
+    ..
+  }
+
+  BaseModel <|-- Product
+}
+
+package "Feedback Management" <<Frame>> {
+  enum CommentStatus {
+    +Waiting : 0
+    +Approved : 1
+    +Disapproved : 2
+  }
+
+  class Comment {
+    .. User ..
+    Comment owner
+    +User : User
+    ..
+
+    .. User Name ..
+    ReadOnly
+    Returns User.UserName
+    +UserName : String
+    ..
+
+    .. Status Rules ..
+    Required
+    Default value is Waiting
+    +Status : CommentStatus
+    ..
+  }
+
+  BaseModel <|-- Comment
+
+  Comment .. User
+  Comment .. CommentStatus
+}
+@enduml
