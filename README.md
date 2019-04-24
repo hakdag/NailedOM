@@ -24,6 +24,9 @@ Product Feedback Using Opinion Mining
 ### Feedback Sequence Diagram (User)
 <img src='https://github.com/hakdag/NailedOM/raw/master/Designs/nailedom_user_feedback_sequence_v0.1.jpg' alt='Nailed Opinion Mining User Feedback Sequence Diagram' />
 
+### Class Diagram
+<img src='https://raw.githubusercontent.com/hakdag/NailedOM/master/Diagrams/Models.png' alt='Nailed Opinion Mining Class Diagram' />
+
 ## User Scenarios
 ### Admin Scenarios Document
 https://docs.google.com/document/d/1EJVSH2T8-zXiyp-9-rVsCAyEpC7I4V0UP3jT1HBJGdk/edit?usp=sharing
