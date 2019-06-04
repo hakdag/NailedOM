@@ -1,0 +1,51 @@
+{
+    "ReRoutes": [
+      {
+        "DownstreamPathTemplate": "/api/{catchAll}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5101
+          }
+        ],
+        "UpstreamPathTemplate": "/auth-api/{catchAll}"
+      },
+      {
+        "DownstreamPathTemplate": "/api/{catchAll}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5102
+          }
+        ],
+        "UpstreamPathTemplate": "/user-api/{catchAll}"
+      },
+      {
+        "DownstreamPathTemplate": "/api/{catchAll}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5103
+          }
+        ],
+        "UpstreamPathTemplate": "/product-api/{catchAll}"
+      },
+      {
+        "DownstreamPathTemplate": "/api/{catchAll}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5104
+          }
+        ],
+        "UpstreamPathTemplate": "/feedback-api/{catchAll}"
+      }
+    ],
+    "GlobalConfiguration": {
+      "BaseUrl": "http://localhost:5000"
+    }
+}
