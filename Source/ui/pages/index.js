@@ -1,29 +1,19 @@
-import React from 'react'
-import Layout from '../components/layout'
+import { connect } from 'react-redux';
+import initialize from '../utils/initialize';
+import Layout from '../components/Layout';
 
-const Home = props => (
-  <Layout>
-    <h1>Cookie-based authentication example</h1>
-
-    <p>Steps to test the functionality:</p>
-
-    <ol>
-      <li>Click login and enter your GitHub username.</li>
-      <li>
-        Click home and click profile again, notice how your session is being
-        used through a token stored in a cookie.
-      </li>
-      <li>
-        Click logout and try to go to profile again. You'll get redirected to
-        the `/login` route.
-      </li>
-    </ol>
-    <style jsx>{`
-      li {
-        margin-bottom: 0.5rem;
-      }
-    `}</style>
+const Index = () => (
+  <Layout title="NailedOM - Home">
+    <h2 className="title is-2">Nailed Opinion Mining</h2>
+    <img src="/static/nextjs.jpg" />
+    <p>
+      An Opinion Mining application developed by Next.js.
+    </p>
   </Layout>
-)
+);
 
-export default Home
+Index.getInitialProps = function(ctx) {
+  initialize(ctx);
+};
+
+export default connect(state => state)(Index);

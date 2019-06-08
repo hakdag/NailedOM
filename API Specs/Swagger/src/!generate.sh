@@ -1,0 +1,1 @@
+swagger-merger --debug -i index.yaml

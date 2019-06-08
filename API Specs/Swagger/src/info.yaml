@@ -1,0 +1,3 @@
+  title: Nailed Opinion Mining API Server
+  description: This is a sample server NailedOM server. For this sample, you can use the api key `special-key` to test the authorization filters.
+  version: "0.1"

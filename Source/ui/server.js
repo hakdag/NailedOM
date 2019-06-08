@@ -1,51 +1,44 @@
-const { createServer } = require('http')
-const httpProxy = require('http-proxy')
-const { parse } = require('url')
-const next = require('next')
+const express = require('express');
+const next = require('next');
+const cookieParser = require('cookie-parser');
 
-const dev = process.env.NODE_ENV !== 'production'
-const app = next({ dev })
-const handle = app.getRequestHandler()
+const port = parseInt(process.env.PORT, 10) || 3000;
+const dev = process.env.NODE_ENV !== 'production';
+const app = next({ dev });
+const handle = app.getRequestHandler();
 
-const proxy = httpProxy.createProxyServer()
-const target = 'http://localhost:3001'
+app.prepare()
+  .then(() => {
+    const server = express();
 
-const port = 3000;
+    server.use(cookieParser());
 
-app.prepare().then(() => {
-  createServer((req, res) => {
-    const parsedUrl = parse(req.url, true)
-    const { pathname, query } = parsedUrl
+    server.get('/signin', (req, res) => {
+      if(req.cookies.token) {
+        res.redirect('/');
+      } else {
+        return app.render(req, res, '/signin', req.query);
+      }
+    });
 
-    switch (pathname) {
-      case '/':
-        app.render(req, res, '/', query)
-        break
+    server.get('/signup', (req, res) => {
+      if(req.cookies.token) {
+        res.redirect('/');
+      } else {
+        return app.render(req, res, '/signup', req.query);
+      }
+    });
 
-      case '/login':
-        app.render(req, res, '/login', query)
-        break
+    server.get('*', (req, res) => {
+      return handle(req, res);
+    });
 
-      case '/api/login.js':
-        proxy.web(req, res, { target }, error => {
-          console.log('Error!', error)
-        })
-        break
-
-      case '/profile':
-        app.render(req, res, '/profile', query)
-        break
-
-      case '/api/profile.js':
-        proxy.web(req, res, { target }, error => console.log('Error!', error))
-        break
-
-      default:
-        handle(req, res, parsedUrl)
-        break
-    }
-  }).listen(port, err => {
-    if (err) throw err
-    console.log(`> Ready on http://localhost:${port}`)
+    server.listen(port, (err) => {
+      if (err) throw err;
+      console.log(`> Ready on http://localhost:${port}`);
+    });
   })
-})
+  .catch((ex) => {
+    console.error(ex.stack);
+    process.exit(1);
+  });

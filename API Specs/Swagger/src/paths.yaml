@@ -1,0 +1,3 @@
+customer:
+  $ref: ./modules/user/paths/index.yaml
+
