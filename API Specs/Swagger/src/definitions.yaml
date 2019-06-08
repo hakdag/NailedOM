@@ -1,0 +1,8 @@
+User:
+  $ref: ./modules/user/definitions/User.yaml
+ApiResponse:
+  $ref: ./modules/user/definitions/ApiResponse.yaml
+SignIn:
+  $ref: ./modules/user/definitions/SignIn.yaml
+SignInResponse:
+  $ref: ./modules/user/definitions/SignInResponse.yaml

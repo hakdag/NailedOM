@@ -1,0 +1,22 @@
+{
+  "name": "mock-server",
+  "version": "1.0.0",
+  "description": "MOck server used for GlobalREST API mocking",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start-proxy": "iisexpress-proxy 8010 to 4502"
+  },
+  "author": "Aurea Energy Sollutions",
+  "license": "ISC",
+  "dependencies": {
+    "array-prototype-last": "0.0.10",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "fmtconv": "^1.0.6",
+    "iisexpress-proxy": "^1.4.0",
+    "json2yaml": "^1.1.0",
+    "swagger-parser": "^3.4.2",
+    "swagger-server": "^1.0.0-alpha.18"
+  }
+}

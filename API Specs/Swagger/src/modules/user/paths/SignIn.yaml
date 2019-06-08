@@ -1,0 +1,26 @@
+post:
+  summary: Logs user into the system
+  description: ""
+  tags:
+    - User
+  operationId: signinuser
+  consumes: 
+    - application/json
+  parameters:
+    - name: body
+      in: body
+      description: "The user object for login"
+      required: true
+      schema:
+        $ref: "#/definitions/SignIn"
+  responses:
+    200:
+      description: successful operation
+      schema:
+        $ref: '#/definitions/SignInResponse'
+    400:
+      description: Bad request
+    401:
+      description: Unauthorized access
+    500:
+      description: Unexpected error (internal error)

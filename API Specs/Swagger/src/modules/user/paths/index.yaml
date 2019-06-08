@@ -1,0 +1,2 @@
+/api/user/signin:
+  $ref: ./SignIn.yaml
