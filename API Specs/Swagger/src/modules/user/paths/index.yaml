@@ -1,2 +1,4 @@
+/api/user:
+  $ref: ./User.yaml
 /api/user/signin:
   $ref: ./SignIn.yaml

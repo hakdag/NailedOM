@@ -2,6 +2,14 @@
     "DELETE": {
         "Resources": []
     },
+    "GET": {
+        "Resources": [{
+            "resourceFileName": "user.js",
+            "operationIds": [
+                "/api/user"                    
+            ]
+        }]
+    },
     "POST": {
         "Resources": [{
             "resourceFileName": "usersignin.js",
