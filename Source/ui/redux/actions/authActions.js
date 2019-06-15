@@ -13,8 +13,12 @@ const authenticate = ({ email, password }, type, action) => {
     axios.post(`${API}/${type}/${action}`, { email, password })
       .then((response) => {
         setCookie('token', response.data.token);
-        Router.push('/');
         dispatch({type: AUTHENTICATE, payload: response.data.token});
+        if (response.data.role === 'Admin') {
+          Router.push('/dashboard');
+        } else {
+          Router.push('/whoami');
+        }
       })
       .catch((err) => {
         throw new Error(err);

@@ -1,5 +1,5 @@
 {
-    "data": {
-        "token": "test-token"
-    }
+    "token": "test-token",
+    "username": "Admin",
+    "role": "Admin"
 }
