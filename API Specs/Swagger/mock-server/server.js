@@ -89,7 +89,7 @@ middleware(path.join(__dirname, '../src/swagger.yaml'), app, function (err, midd
 
 
     app.listen(8010, function () {
-        console.log('Aurea AES CIS Swagger api is now running at http://localhost:8010/');
+        console.log('Swagger api is now running at http://localhost:8010/');
     });
 });
 

@@ -13,10 +13,11 @@
     "array-prototype-last": "0.0.10",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "fmtconv": "^1.0.6",
+    "fmtconv": "^1.0.7",
     "iisexpress-proxy": "^1.4.0",
     "json2yaml": "^1.1.0",
     "swagger-parser": "^3.4.2",
-    "swagger-server": "^1.0.0-alpha.18"
+    "swagger-server": "^1.0.0-alpha.18",
+    "yamljs": "^0.3.0"
   }
 }
