@@ -58,6 +58,28 @@ paths:
           description: Unauthorized access
         '500':
           description: Unexpected error (internal error)
+  /api/products/getAll:
+    get:
+      summary: Gets products
+      description: ''
+      tags:
+        - Products
+      operationId: getproducts
+      consumes:
+        - application/json
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Product'
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized access
+        '500':
+          description: Unexpected error (internal error)
 definitions:
   User:
     type: object
@@ -101,3 +123,16 @@ definitions:
     properties:
       token:
         type: string
+  Product:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      productname:
+        type: string
+      description:
+        type: string
+      currentrating:
+        type: integer
+        format: int32

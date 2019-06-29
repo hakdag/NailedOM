@@ -15,7 +15,7 @@ const authenticate = ({ email, password }, type, action) => {
         setCookie('token', response.data.token);
         dispatch({type: AUTHENTICATE, payload: response.data.token});
         if (response.data.role === 'Admin') {
-          Router.push('/dashboard');
+          Router.push('/admin/dashboard');
         } else {
           Router.push('/whoami');
         }

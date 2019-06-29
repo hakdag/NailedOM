@@ -27,6 +27,7 @@ const Layout = ({ children, title, isAuthenticated, deauthenticate }) => (
       <link rel="stylesheet" href="/static/material.min.css" />
       <link rel="stylesheet" href="/static/styles.css" />
       <link rel="stylesheet" href="/static/admin.css" />
+      <link rel="stylesheet" href="https://unpkg.com/react-table@latest/react-table.css" />
     </Head>
 
     <div className="mdl-layout__container">
