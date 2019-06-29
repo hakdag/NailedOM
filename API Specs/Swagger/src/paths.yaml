@@ -1,3 +1,5 @@
 customer:
   $ref: ./modules/user/paths/index.yaml
+product:
+  $ref: ./modules/product/paths/index.yaml
 

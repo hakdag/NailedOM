@@ -1,0 +1,12 @@
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+  productname:
+    type: string
+  description:
+    type: string
+  currentrating:
+    type: integer
+    format: int32

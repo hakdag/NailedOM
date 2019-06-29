@@ -70,7 +70,7 @@ package "Product Management" <<Frame>> {
     Maximum 2000 characters
     Rich text editor
     Possible to enter HTML content with picture
-    +ProductName : String
+    +Description : String
     ..
 
     .. Current Rating Rules ..

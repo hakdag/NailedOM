@@ -6,3 +6,5 @@ SignIn:
   $ref: ./modules/user/definitions/SignIn.yaml
 SignInResponse:
   $ref: ./modules/user/definitions/SignInResponse.yaml
+Product:
+  $ref: ./modules/product/definitions/Product.yaml

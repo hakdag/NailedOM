@@ -8,6 +8,11 @@
             "operationIds": [
                 "/api/user"                    
             ]
+        }, {
+            "resourceFileName": "products.js",
+            "operationIds": [
+                "/api/products/getAll"                    
+            ]
         }]
     },
     "POST": {

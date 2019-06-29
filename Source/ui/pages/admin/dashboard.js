@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { API } from '../config';
-import initialize from '../utils/initialize';
-import Layout from '../components/Admin-Layout';
+import { API } from '../../config';
+import initialize from '../../utils/initialize';
+import Layout from '../../components/Admin-Layout';
 
 const Dashboard = ({ user }) => (
     <Layout title="Dashboard">

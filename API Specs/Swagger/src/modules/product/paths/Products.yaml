@@ -1,0 +1,21 @@
+get:
+  summary: Gets products
+  description: ""
+  tags:
+    - Products
+  operationId: getproducts
+  consumes: 
+    - application/json
+  responses:
+    200:
+      description: successful operation
+      schema:
+        type: "array"
+        items:
+          $ref: '#/definitions/Product'
+    400:
+      description: Bad request
+    401:
+      description: Unauthorized access
+    500:
+      description: Unexpected error (internal error)
